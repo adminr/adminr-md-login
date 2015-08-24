@@ -13,7 +13,7 @@
                     <form class="form-signin" ng-submit="authorize(username,password,rememberMe)">
                         <div class="alert alert-danger" ng-if="authorizationError">{{authorizationError.data.error}}</div>
                         <div class="alert alert-danger" ng-if="!dataSource">no datasource defined</div>
-                        <input type="text" class="form-control" ng-model="username" ng-disabled="authorizing" placeholder="Email" required autofocus>
+                        <input type="text" class="form-control" ng-model="username" ng-disabled="authorizing" placeholder="Username" required autofocus>
                         <input type="password" class="form-control" ng-model="password" ng-disabled="authorizing" placeholder="Password" required>
                         <div class="checkbox">
                             <label>
