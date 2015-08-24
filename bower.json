@@ -1,0 +1,29 @@
+{
+  "name": "adminr-login",
+  "version": "0.0.1",
+  "authors": [
+    "Jakub Knejzlik <jakub.knejzlik@gmail.com>"
+  ],
+  "description": "adminr login module",
+  "main": "dist/index.js",
+  "keywords": [
+    "adminr",
+    "administration",
+    "angular",
+    "login"
+  ],
+  "license": "MIT",
+  "homepage": "www.knejzlik.cz",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "adminr-datasources": "~0.0.2",
+    "angular-bootstrap": "~0.13.3",
+    "bootstrap-css-only": "~3.3.5"
+  }
+}

@@ -1,0 +1,31 @@
+<span ng-controller="AdminrLogin">
+    <span ng-if="dataSource.isAuthorized()" adminr-show-container="'adminr-login'"></span>
+    <div class="container" ng-if="!dataSource.isAuthorized()">
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-md-offset-4">
+                <h1 class="text-center login-title">
+                    Sign in to continue to
+                    <br /> TheFuntasty Distribution
+                    <br /> <small>datasource: {{dataSource.name}}</small>
+                </h1>
+                <div class="account-wall">
+                    <!--<img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120" alt="">-->
+                    <form class="form-signin" ng-submit="authorize(username,password,rememberMe)">
+                        <div class="alert alert-danger" ng-if="loginError">{{loginError.error}}</div>
+                        <input type="email" class="form-control" ng-model="username" placeholder="Email" required autofocus>
+                        <input type="password" class="form-control" ng-model="password" placeholder="Password" required>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" ng-model="rememberMe" value="remember-me">
+                                Remember me
+                            </label>
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                        <!--<a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>-->
+                    </form>
+                </div>
+                <!--<a href="#" class="text-center new-account">Create an account </a>-->
+            </div>
+        </div>
+    </div>
+</span>

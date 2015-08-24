@@ -1,0 +1,12 @@
+{
+  "name": "adminr-login",
+  "version": "0.0.1",
+  "devDependencies": {
+    "browserify": "^11.0.1",
+    "coffeeify": "^1.1.0",
+    "partialify": "^3.1.5"
+  },
+  "scripts": {
+    "build": "mkdir dist;browserify -t coffeeify -t partialify index.coffee -o dist/index.js"
+  }
+}
