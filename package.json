@@ -4,9 +4,10 @@
   "devDependencies": {
     "browserify": "^11.0.1",
     "coffeeify": "^1.1.0",
-    "partialify": "^3.1.5"
+    "partialify": "^3.1.5",
+    "browserify-ngannotate": "^1.0.1"
   },
   "scripts": {
-    "build": "mkdir dist;browserify -t coffeeify -t partialify index.coffee -o dist/index.js"
+    "build": "mkdir dist;browserify -t coffeeify -t [ browserify-ngannotate --x .coffee ] -t partialify index.coffee -o dist/index.js"
   }
 }
