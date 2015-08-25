@@ -1,4 +1,4 @@
-mod = angular.module('adminr-login',[])
+mod = angular.module('adminr-login',['adminr-datasources'])
 
 mod.run(($templateCache)->
   $templateCache.put('adminr-login',require('./index.html'))
