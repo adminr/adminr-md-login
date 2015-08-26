@@ -7,7 +7,7 @@ mod.run(["$templateCache", function($templateCache) {
   return $templateCache.put('adminr-login', require('./index.html'));
 }]);
 
-mod.controller('AdminrLogin', ["$scope", "DataSources", function($scope, DataSources) {
+mod.controller('AdminrLogin', ["$scope", "DataSources", "$mdDialog", function($scope, DataSources, $mdDialog) {
   $scope.dataSource = DataSources.getDataSource();
   $scope.authorizing = false;
   $scope.authorizationError = null;
@@ -18,6 +18,7 @@ mod.controller('AdminrLogin', ["$scope", "DataSources", function($scope, DataSou
       return $scope.authorizing = false;
     })["catch"](function(error) {
       $scope.authorizing = false;
+      $mdDialog.show($mdDialog.alert().parent(angular.element(document.body)).clickOutsideToClose(true).title('Login failed!').content('Reason: ' + (error.data.error || 'unknown')).ariaLabel('Login error').ok('Ok!'));
       return $scope.authorizationError = error;
     });
   };

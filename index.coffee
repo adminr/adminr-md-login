@@ -4,7 +4,7 @@ mod.run(($templateCache)->
   $templateCache.put('adminr-login',require('./index.html'))
 )
 
-mod.controller('AdminrLogin',($scope,DataSources)->
+mod.controller('AdminrLogin',($scope,DataSources,$mdDialog)->
   $scope.dataSource = DataSources.getDataSource()
 
   $scope.authorizing = no
@@ -17,6 +17,15 @@ mod.controller('AdminrLogin',($scope,DataSources)->
       $scope.authorizing = no
     ).catch((error)->
       $scope.authorizing = no
+      $mdDialog.show(
+        $mdDialog.alert()
+        .parent(angular.element(document.body))
+        .clickOutsideToClose(true)
+        .title('Login failed!')
+        .content('Reason: ' + (error.data.error || 'unknown'))
+        .ariaLabel('Login error')
+        .ok('Ok!')
+      );
       $scope.authorizationError = error
     )
 )
