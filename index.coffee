@@ -1,7 +1,7 @@
-mod = angular.module('adminr-login',['adminr-datasources','ngMaterial'])
+mod = angular.module('adminr-md-login',['adminr-datasources','ngMaterial'])
 
 mod.run(($templateCache)->
-  $templateCache.put('adminr-login',require('./index.html'))
+  $templateCache.put('adminr-md-login',require('./index.html'))
 )
 
 mod.controller('AdminrLogin',($scope,DataSources,$mdDialog)->
