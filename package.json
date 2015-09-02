@@ -1,6 +1,6 @@
 {
   "name": "adminr-md-login",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "devDependencies": {
     "browserify": "^11.0.1",
     "coffeeify": "^1.1.0",
@@ -9,8 +9,8 @@
   },
   "scripts": {
     "build": "mkdir dist;browserify -t coffeeify -t [ browserify-ngannotate --x .coffee ] -t partialify index.coffee -o dist/index.js",
-    "prepublish":"npm version patch",
-    "publish":"git commit -a -m",
-    "postpublish":"git push;git push --tags;"
+    "prepublish": "npm version patch",
+    "publish": "git commit -a -m",
+    "postpublish": "git push;git push --tags;"
   }
 }
