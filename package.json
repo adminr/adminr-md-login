@@ -9,7 +9,8 @@
   },
   "scripts": {
     "build": "mkdir dist;browserify -t coffeeify -t [ browserify-ngannotate --x .coffee ] -t partialify index.coffee -o dist/index.js",
+    "prepublish":"npm version patch",
     "publish":"git commit -a -m",
-    "postpublish":"git push;git push --tags;"
+    "postapublish":"git push;git push --tags;"
   }
 }
