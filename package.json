@@ -1,6 +1,6 @@
 {
   "name": "adminr-md-login",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "devDependencies": {
     "browserify": "^11.0.1",
     "coffeeify": "^1.1.0",
