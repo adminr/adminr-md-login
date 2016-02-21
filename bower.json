@@ -22,7 +22,8 @@
     "tests"
   ],
   "dependencies": {
-    "adminr-datasources": "~0.0.2",
-    "angular-material": "~0.10.1"
+    "adminr-datasources": "^0.1.15",
+    "angular-material": "^1.0.5",
+    "adminr-core": "^0.0.8"
   }
 }

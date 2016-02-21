@@ -4,20 +4,21 @@
         <div style="max-width: 420px;margin:0 auto;" layout="column">
             <h2 style="text-align: center">Sign in to continue</h2>
             <md-card>
-                <form ng-submit="authorize(username,password,rememberMe)">
-                    <div layout-padding layout="column">
+                <md-progress-linear md-mode="indeterminate" ng-hide="!authorizing"></md-progress-linear>
+                <form layout-padding ng-submit="authorize(username,password,rememberMe)">
+                    <div layout="column">
                         <md-input-container flex>
-                            <label>Username</label>
-                            <input type="text" ng-model="username" ng-disabled="authorizing" required autofocus>
+                            <label>{{usernameType == 'email' ? 'E-mail' : 'Username'}}</label>
+                            <input type="{{usernameType == 'email' ? 'E-mail' : 'Username'}}" name="username" type="{{usernameType}}" ng-model="username" ng-disabled="authorizing" required autofocus>
                         </md-input-container>
                         <md-input-container flex>
                             <label>Password</label>
                             <input type="password" ng-model="password" ng-disabled="authorizing" required>
                         </md-input-container>
-                        <md-checkbox ng-model="rememberMe">remember me</md-checkbox>
+                        <!--<md-checkbox ng-model="rememberMe">remember me</md-checkbox>-->
                         <div layout="row">
                             <div flex></div>
-                            <input type="submit" value="Sign in" class="md-button md-primary" />
+                            <input type="submit" layout-fill value="Sign in" class="md-button md-raised md-primary" />
                         </div>
                     </div>
                 </form>
