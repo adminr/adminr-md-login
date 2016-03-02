@@ -47,7 +47,7 @@ mod.controller('AdminrLogin',['$scope','AdminrDataSources','$mdDialog',($scope,A
         .parent(angular.element(document.body))
         .clickOutsideToClose(true)
         .title('Login failed!')
-        .content('Reason: ' + (error.data.error || 'unknown'))
+        .content('Reason: ' + (error.data?.error || 'unknown'))
         .ariaLabel('Login error')
         .ok('Ok!')
       );
