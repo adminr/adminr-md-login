@@ -38,6 +38,7 @@ mod.controller('AdminrLogin',['$scope','AdminrDataSources','$mdDialog',($scope,A
       return console.error('datasource not defined')
     $scope.authorizing = yes
     $scope.authorizationError = null
+    rememberMe = yes
     $scope.dataSource.authorize(username,password,!rememberMe).then(()->
       $scope.authorizing = no
     ).catch((error)->
